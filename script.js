@@ -1,4 +1,7 @@
-var form = document.getElementById("former")
+var form = document.getElementById("former");
+var qr = document.getElementById("qrcode");
+
+
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -6,6 +9,7 @@ form.addEventListener("submit", function (event) {
     console.log(text.value);
 
     if (text.value != "") {
+        qr.innerHTML = '';
         new QRCode(document.getElementById("qrcode"), text.value)
     }
 })
